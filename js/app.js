@@ -33,9 +33,16 @@ phoneKeyBoardApp.filter('ChangeToPhoneNumber', ['PhoneKeyBoard', function(PhoneK
     		for (var i = 0; i < input.split('').length; i++) 
     		{
     			var curChar = input[i];
-    			isNaN(curChar) == true ? 
-    			( out += PhoneKeyBoard.EquvalentNumber(curChar) ) : 
-    			( curChar !==' ' ? out += curChar : out+= ' '  ) ;
+    			if(i!=0 && curChar == ' ' && input[i-1] == ' ')
+    			{
+    				out += '';
+    			} 
+    			else
+    			{
+    				isNaN(curChar) == true ? 
+    				( out += PhoneKeyBoard.EquvalentNumber(curChar) ) : 
+    				( curChar !==' ' ? out += curChar : out+= ' '  ) ;
+    			}
 			}
     	}
     	else
