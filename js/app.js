@@ -32,9 +32,10 @@ phoneKeyBoardApp.filter('ChangeToPhoneNumber', ['PhoneKeyBoard', function(PhoneK
     	{				    		
     		for (var i = 0; i < input.split('').length; i++) 
     		{
-    			isNaN(input[i]) == true ? 
-    			( out += PhoneKeyBoard.EquvalentNumber(input[i]) ) : 
-    			( input[i] !==' ' ? out += input[i] : out+= ' '  ) ;
+    			var curChar = input[i];
+    			isNaN(curChar) == true ? 
+    			( out += PhoneKeyBoard.EquvalentNumber(curChar) ) : 
+    			( curChar !==' ' ? out += curChar : out+= ' '  ) ;
 			}
     	}
     	else
